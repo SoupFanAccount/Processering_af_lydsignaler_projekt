@@ -47,7 +47,7 @@ def play_note(freq, wave_type):
     res_strength = scale_res.get() / 100.0
     eq_strength = [scale_eq.get() / 100.0] * 3
     # Apply filters
-    resonated_wave = resonator_filter(wave, 440, 50, res_strength)
+    resonated_wave = resonator_filter(wave, 392, 50, res_strength)
     equalized_wave = equalizer_filter(resonated_wave, eq_strength)
     sd.play(equalized_wave, sample_rate)
     sd.wait()
